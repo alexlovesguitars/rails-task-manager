@@ -1,0 +1,17 @@
+<div class="container d-flex flex-column">
+  <h1 class="mt-5 mb-5">Edit a Task</h1>
+  <div class="d-flex">
+    <%= form_with(model: @task) do |f| %>
+      <%= f.label :title, class: "mx-2" %>
+      <%= f.text_field :title, class: "mx-2 mb-5" %>
+
+      <%= f.label :details, class: "mx-2" %>
+      <%= f.text_area :details, class: "mx-2" %>
+      <div class="d-flex">
+      <%= f.button "Update!", type: "submit", class: "btn btn-primary mx-2" %>
+      <% end %>
+      <%= button_to "Go Back", task_path(@task), method: :get, class: "btn btn-primary" %>
+      </div>
+    </div>
+
+</div>

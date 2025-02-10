@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 class="mt-5 mb-5">Here's where the tasks should be</h1>
+
+  <ol>
+  <% @task.each do |task| %>
+    <li class="mb-1">
+      <div class="d-flex">
+        <label data-controller="checkbox" class="checkbox-container mx-1">
+        <input type="checkbox" name="task[completed]" id="completed"
+         class="checkbox-input mx-1" data-action="change->checkbox#toggle">
+        </label>
+        <%= link_to task.title, task_path(task), class: "mx-2" %> -
+
+        <%= button_to '<i class="fa-solid fa-trash"></i>'.html_safe,
+        task_path(task), method: :delete, data: { confirm: 'Are you sure?' }, class: "mx-3" %>
+      </div>
+    </li>
+  <% end %>
+  </ol>
+
+  <%= button_to "Add new Task", new_task_path, method: :get, class: "btn btn-primary" %>
+</div>

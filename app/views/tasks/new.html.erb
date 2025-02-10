@@ -1,0 +1,13 @@
+<div class="container">
+  <h1 class="mt-5 mb-5">Create a new Task</h1>
+
+  <div>
+    <%= form_with(model: @task) do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :details %>
+      <%= f.text_field :details %>
+      <%= f.button "Create!", type: "submit", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
